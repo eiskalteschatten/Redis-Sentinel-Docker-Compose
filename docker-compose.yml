@@ -27,7 +27,6 @@ services:
       context: ./redis-sentinel
     links:
       - redis-master
-      - redis-slave
  
   # Instance 2
   redis-sentinel2:
@@ -35,7 +34,6 @@ services:
       context: ./redis-sentinel
     links:
       - redis-master
-      - redis-slave
  
   # Instance 3
   redis-sentinel3:
@@ -43,4 +41,3 @@ services:
       context: ./redis-sentinel
     links:
       - redis-master
-      - redis-slave
