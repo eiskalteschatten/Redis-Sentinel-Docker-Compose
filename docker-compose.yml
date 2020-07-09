@@ -1,4 +1,5 @@
-version: '2'
+version: '3.7'
+
 services:
  
   app:
@@ -7,14 +8,14 @@ services:
       - redis-sentinel
      
   redis-master:
-    image: redis:3.2.5-alpine
+    image: redis:6-alpine
     volumes:
       - "./.data:/data"
     ports:
       - "6379:6379"
  
   redis-slave:
-    image: redis:3.2.5-alpine
+    image: redis:6-alpine
     command: redis-server --slaveof redis-master 6379
     links:
       - redis-master
